@@ -1,0 +1,21 @@
+POST /signup
+    accepts: name, username, password, email, mobile, country, gender
+
+
+POST /login
+    accepts: username, password
+    returns: id, name of user
+
+POST /logout
+    accepts: token
+    returns: success
+
+GET /profile
+    return name, username, password, email, mobile, country, gender
+
+
+GET /profile/userid/feed
+
+
+POST /profile/userid/feed
+
