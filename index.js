@@ -27,13 +27,27 @@ app.get("/", function (req, res) {
 app.use("/auth", authRouter);
 app.use("/profile", userRouter);
 
-app.listen(port, async () => {
+// app.listen(port, async () => {
+//   try {
+//     await Connection;
+//     console.log("Connected");
+//   } catch (e) {
+//     console.log(e);
+//   }
+
+//   console.log("Server is live at http://localhost:8080");
+// });
+
+app.listen(port, async (err, res) => {
   try {
     await Connection;
-    console.log("Connected");
-  } catch (e) {
-    console.log(e);
+    console.log("Connected Successfully");
+  } catch (err) {
+    console.log(err);
   }
 
-  console.log("Server is live at http://localhost:8080");
+  if (err) {
+    return console.log("Something went wrong");
+  }
+  console.log("Sever is live at http://localhost:8080");
 });
